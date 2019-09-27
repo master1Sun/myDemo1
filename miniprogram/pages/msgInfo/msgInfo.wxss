@@ -1,0 +1,11 @@
+page {
+  background-color: #212121;
+}
+
+page, .page {
+  height: 100%;
+}
+
+.adContainer {
+  width: 100%;
+}

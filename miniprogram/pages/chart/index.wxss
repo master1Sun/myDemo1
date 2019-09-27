@@ -1,0 +1,85 @@
+/*index.wxss  */
+page {
+  background: "#212121";
+}
+/*实现子控件居中显示  */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*顶部标题  */
+
+.title {
+  font-size: 34rpx;
+  margin: 40rpx;
+}
+
+.wechat {
+  font-size: 44rpx;
+  color: red;
+}
+
+/*表格布局  */
+
+.table {
+  border: 1px solid gray;
+  width: 700rpx;
+  text-align: center;
+}
+
+/*第一行样式  */
+
+.section-top {
+  display: flex;
+  flex-direction: row;
+  height: 26px;
+  background: rgb(78, 78, 78);
+
+}
+
+.input-top {
+  border-right: 1px solid gray;
+  height: 50rpx;
+  width: 200rpx;
+  color: #000;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.end {
+  border-right: 0px;
+}
+
+/*第二行样式  */
+
+.section2 {
+  display: flex;
+  border-top: 1px solid gray;
+  flex-direction: row;
+  height: 26px;
+
+}
+
+.input2 {
+  border-right: 1px solid gray;
+  height: 55rpx;
+  width: 200rpx;
+  color: #000;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.end2 {
+  border-right: 0px;
+}
+
+.span_title {
+  color: greenyellow;
+  font-weight: 800;
+  font-size: 12px;
+  margin-left: 10px;
+  /* text-decoration: underline; */
+}

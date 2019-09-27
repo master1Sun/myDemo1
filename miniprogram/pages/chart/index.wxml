@@ -1,0 +1,41 @@
+<view class="weui-footer" wx:if="{{dataList.length>0}}">
+  <view class="weui-footer__text" style="color: red;font-size:8px;">温馨提示:点击列表查看详情</view>
+</view>
+<scroll-view class="scroll-view_H" scroll-y style="background-color:#212121;" class="web-font1">
+  <icon type="clear" size="20" color="red" wx:if="{{dataList.length>0}}" bindtap="clearData" style="right: 10px;padding-top: 5px;position: absolute;" />
+  <block wx:for="{{dataList}}" wx:for-item="item" wx:for-index="{{index}}">
+    <span class="span_title" data-data='{{item}}'>{{item.t}}</span>
+    <view>
+      <view style="padding: 10px;">
+        <view class='table'>
+          <view class="section-top">
+            <!-- <input type="text " placeholder="测试设备" class="input-top" disabled /> -->
+            <input type="text " placeholder="网络速度" class="input-top" disabled />
+            <input type="text " placeholder="网络类型" class="input-top" disabled />
+            <input type="text " placeholder="测试时间" class="input-top" disabled />
+            <input type="text " placeholder="网络带宽" class="input-top end" disabled />
+          </view>
+          <view class="section2 " wx:for="{{item.p}}" wx:for-item="p" data-list="{{p}}" bindtap="onshow">
+            <!-- <input type="text" placeholder="{{p.model}}" class="input2 " disabled /> -->
+            <input type="digit" class="input2" placeholder="{{p.networkContent}}" disabled />
+            <input type="digit" class="input2" placeholder="{{p.networktype}}" disabled/>
+            <input type="text" class="input2 " placeholder="{{p.shijian}}" disabled />
+            <input type="text" class="input2 end2" placeholder="约{{p.broadband || 0}}兆" disabled />
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="weui-loadmore weui-loadmore_line">
+    <view wx:if="{{spinning}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view wx:elif="{{dataList.length < 1}}" class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+    <view wx:else class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多数据</view>
+  </view>
+</scroll-view>
+
+
+<ad unit-id="adunit-dcc73a2a9b79586c" ad-intervals="40"></ad>
