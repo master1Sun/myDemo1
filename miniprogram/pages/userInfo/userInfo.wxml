@@ -1,0 +1,65 @@
+<view class="weui-footer" bindtap="onLook" wx:if="{{dataList.length>0}}">
+  <view class="weui-footer__text" style="color: red;font-size:8px;">温馨提示:点击列表查看详情</view>
+</view>
+<scroll-view class="scroll-view_H" scroll-y style="background-color:#212121;" class="web-font1">
+  <view style="padding: 10px;" wx:if="{{show==0}}">
+    <view class='table'>
+      <view class="section-top">
+        <input type="text" placeholder="设备名称" class="input-top" disabled />
+        <input type="text" placeholder="IP" class="input-top" disabled />
+        <input type="text" placeholder="IP地址" class="input-top" disabled />
+        <input type="text" placeholder="访问次数" class="input-top" disabled />
+      </view>
+      <view class="section2" wx:for="{{dataList}}" wx:for-item="p" data-openid="{{p._openid}}" bindtap="onshow2">
+        <input type="text" placeholder="{{p.model}}" class="input2" disabled />
+        <input type="digit" class="input2" placeholder="{{p.IP}}" disabled />
+        <input type="digit" class="input2" placeholder="{{p.IPaddress}}" disabled/>
+        <input type="text" class="input2" placeholder="{{p.readNum}}" disabled />
+      </view>
+    </view>
+  </view>
+
+  <view wx:elif="{{show==1}}">
+    <block wx:for="{{dataList}}" wx:for-item="item" wx:for-index="{{index}}">
+      <span class="span_title" data-data='{{item}}'>{{item.t}}</span>
+      <view>
+        <view style="padding: 10px;">
+          <view class='table'>
+            <view class="section-top">
+              <input type="text " placeholder="设备品牌" class="input-top" disabled />
+              <input type="text " placeholder="网络速度" class="input-top" disabled />
+              <input type="text " placeholder="网络类型" class="input-top" disabled />
+              <input type="text " placeholder="测试时间" class="input-top" disabled />
+              <input type="text " placeholder="网络带宽" class="input-top end" disabled />
+            </view>
+            <view class="section2 " wx:for="{{item.p}}" wx:for-item="p" data-list="{{p}}" bindtap="onshow">
+              <input type="digit" class="input2" placeholder="{{p.brand}}" disabled />
+              <input type="digit" class="input2" placeholder="{{p.networkContent}}" disabled />
+              <input type="digit" class="input2" placeholder="{{p.networktype}}" disabled/>
+              <input type="text" class="input2 " placeholder="{{p.shijian}}" disabled />
+              <input type="text" class="input2 end2" placeholder="约{{p.broadband || 0}}兆" disabled />
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+  <view class="weui-msg__opr-area" style="margin-top: 30px;" wx:if="{{dataList.length>0}}">
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="default" bindtap="onback" size="mini">返回</button>
+    </view>
+  </view>
+
+  <view class="weui-loadmore weui-loadmore_line">
+    <view wx:if="{{spinning}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view wx:elif="{{dataList.length < 1}}" class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+    <view wx:else class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多数据</view>
+  </view>
+</scroll-view>
+
+<ad unit-id="adunit-2235428cbeb44b75" ad-intervals="40"></ad>
