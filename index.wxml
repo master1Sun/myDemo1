@@ -1,0 +1,66 @@
+<view class="weui-progress">
+  <view class="weui-progress__bar">
+    <progress percent="{{speed}}" stroke-width="2" />
+  </view>
+</view>
+<scroll-view class="scroll-view_H" scroll-y style="background-color:#212121;" class="web-font1">
+  <view class="section" style='background:#212121'>
+    <view class="container web-font1" style=' background-color:#212121;'>
+      <view class="table">
+        <view class="tr">
+          <view class="th">网络类型</view>
+          <view class="th">平均耗时</view>
+          <view class="th">平均下载速率</view>
+          <view class="th" style="border-right: 0px;">网络带宽</view>
+        </view>
+        <view class="tr">
+          <view class="td">{{networkType1}}</view>
+          <view class="td">{{startProgress}}</view>
+          <view class="td">{{networkContent}}</view>
+          <view class="td" style="border-right: 0px;">约
+            <span style="color:red">{{broadband}}</span> 兆</view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="flex-wrp" style="flex-direction:row;">
+      <view class="flex-item">
+        <view class="container" style='width:{{a.screenWidth-5}}px;height: 250px;border: 0px solid gray;margin-left: 3px;'>
+          <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}" style="margin-top:20px;"></ec-canvas>
+        </view>
+
+
+
+
+        <view class="weui-loadmore weui-loadmore_line">
+          <view style="font-size:12px;" class="weui-loadmore__tips weui-loadmore__tips_in-line">{{networkList[0].networkContent}}{{networkList[0].startProgress}}</view>
+        </view>
+
+
+        <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary" loading="{{loading}}" disabled="{{disabled}}" bindtap="startSearch">网络测速</button>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class="doc-container" data-c='0' bindtap="onLook">
+    <image src='/images/shine.png' class='doc-img'></image>
+  </view>
+
+  <view class="weui-footer">
+    <view class="weui-footer__text" style="color: gray;font-size:8px;">
+      <span>Copyright ©{{copyright}} 网速测试</span>
+    </view>
+    <view class="weui-footer__text" style="color: gray;font-size:8px;">
+      <span style="color:green" bindtap="onLook" data-c='1'>{{IP}} - {{IPaddress}}</span>
+    </view>
+  </view>
+
+
+
+</scroll-view>
