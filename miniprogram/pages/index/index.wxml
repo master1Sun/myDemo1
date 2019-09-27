@@ -48,6 +48,10 @@
   </view>
 
 
+  <view class="doc-container" data-c='0' bindtap="onLook">
+    <image src='/images/shine.png' class='doc-img'></image>
+  </view>
+
   <view class="weui-footer">
     <view class="weui-footer__text" style="color: gray;font-size:8px;">
       <span>Copyright ©{{copyright}} 网速测试</span>
@@ -55,8 +59,8 @@
     <view class="weui-footer__text" style="color: gray;font-size:8px;">
       <span style="color:green" bindtap="onLook" data-c='1'>{{IP}} - {{IPaddress}}</span>
     </view>
-    <view class="weui-footer__text" style="color: gray;font-size:8px;" wx:if="{{number}}">
-      <span style="color:#9dd0b3" data-c='0' bindtap="onLook">访问次数{{number}}</span>
-    </view>
   </view>
+
+
+
 </scroll-view>

@@ -184,15 +184,15 @@ ec-canvas {
 .doc-container {
   position: fixed;
   right: 40rpx;
-  bottom: 60rpx;
+  /* bottom: 60rpx; */
   z-index: 2;
-  width: 100rpx;
-  height: 100rpx;
+  /* width: 100rpx;
+  height: 100rpx; */
   border-radius: 50%;
-  box-shadow: 0px 3px 8px 0px rgba(41, 46, 45, 0.5);
+  /* box-shadow: 0px 3px 8px 0px rgba(41, 46, 45, 0.5); */
   display: flex;
   justify-content: center;
-  background-color: #212121;
+  /* background-color: #212121; */
   align-items: center;
 }
 
@@ -223,4 +223,18 @@ ec-canvas {
 }
 .weui-footer_fixed-bottom{
     margin-bottom: 0;
+}
+
+
+
+
+.doc-img {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.doc-txt {
+  font-size: 28rpx;
+  color: #3963bc;
+  margin-top: 15rpx;
 }

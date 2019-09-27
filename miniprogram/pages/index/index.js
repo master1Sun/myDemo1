@@ -272,6 +272,11 @@ Page({
     wx.navigateTo({
       url: '../../pages/rop/index?c=' + c,
     })
+  },
+  onDoc() {
+    wx.navigateTo({
+      url: '../../pages/room/room',
+    })
   }
 })
 
